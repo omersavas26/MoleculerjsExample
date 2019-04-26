@@ -1,0 +1,29 @@
+{
+  "name": "arge",
+  "version": "1.0.0",
+  "description": "KOI Moleculer FW ArGe projesi",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services",
+    "devMulti": "moleculer-runner --repl --hot multiService",
+    "web": "node ./index.js --hot",
+    "start": "moleculer-runner"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {},
+  "dependencies": {
+    "expect": "^24.7.1",
+    "moleculer": "^0.13.5",
+    "moleculer-repl": "^0.5.5",
+    "moleculer-web": "^0.8.5",
+    "nats": "^1.2.2",
+    "request": "^2.88.0",
+    "xml-js": "^1.6.11"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  }
+}

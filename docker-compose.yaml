@@ -1,0 +1,45 @@
+version: "3.0"
+
+services:
+
+    api:
+        image: karapazar/npm:0.1
+        env_file: docker.env
+        environment:
+            SERVICES: api
+            PORT: 3000
+        volumes:
+            - /path/to/clone:/app
+        links:
+            - nats
+        depends_on:
+            - nats
+        
+    test:
+        image: karapazar/npm:0.1
+        env_file: docker.env
+        environment:
+            SERVICES: test
+        volumes:
+            - /path/to/clone:/app
+        links:
+            - nats
+        depends_on:
+            - nats
+
+    katmanlar:
+        image: karapazar/npm:0.1
+        env_file: docker.env
+        environment:
+            SERVICES: katmanlar
+        volumes:
+            - /path/to/clone:/app
+        links:
+            - nats
+        depends_on:
+            - nats
+            
+    nats:
+        image: nats
+        ports:
+            - "4222:4222"
